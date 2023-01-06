@@ -6,15 +6,15 @@ import Form from "react-bootstrap/Form";
 import Nav from "react-bootstrap/Nav";
 import InputGroup from "react-bootstrap/InputGroup";
 import { ReactComponent as ReactLogo } from "./electon-logo.svg";
-import { ReactComponent as UserLogo } from "./user.svg";
-import { Shopping } from "./shopping-cart.svg";
-import { Heart } from "./heart.svg";
+import { ReactComponent as User } from "./user.svg";
+import { ReactComponent as Shopping } from "./shopping-cart.svg";
+import { ReactComponent as Heart } from "./heart.svg";
 import "./navbar.css";
 
 export function Top() {
   return (
     <Navbar className="nab-bg">
-      <Container className="gap-5">
+      <Container className="gap-5 ">
         <Navbar.Brand href="#home">
           <ReactLogo />
         </Navbar.Brand>
@@ -24,25 +24,30 @@ export function Top() {
           style={{ maxHeight: "100px" }}
           navbarScroll
         >
-          <InputGroup className="">
+          <InputGroup className="navbar-input rounded-4">
             <Form.Control
-              className="position-relative rounded-pill"
+              className="rounded-4 border-0"
               placeholder="Serach any things"
               aria-label="Serach any things"
               aria-describedby="basic-addon2"
             />
-            <Button
-              variant="warning"
-              className="position-absolute top-50 start-100 translate-middle rounded-pill"
-            >
+            <Button variant="warning" className="rounded-4">
               Search
             </Button>
           </InputGroup>
         </Nav>
-        <Navbar.item>
-          <UserLogo />
-          <a href="#login">Mark Otto</a>
-        </Navbar.item>
+        <Navbar.Text>
+          <User />
+          <a href="#login">Sing in</a>
+        </Navbar.Text>
+        <Navbar.Text>
+          <Heart />
+          <div></div>
+        </Navbar.Text>
+        <Navbar.Text>
+          <Shopping />
+          <div></div>
+        </Navbar.Text>
       </Container>
     </Navbar>
   );
